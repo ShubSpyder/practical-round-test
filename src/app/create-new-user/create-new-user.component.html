@@ -1,0 +1,24 @@
+<h2>Create User/ Users</h2>
+
+<form (ngSubmit)="onSubmit()">
+    <div class="form-area" *ngFor = "let newForm of dataarray; let i=index">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" name="name{{i}}" [(ngModel)] ="newForm.name"> 
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" name="email{{i}}" [(ngModel)] ="newForm.email" (keyup)="checkEmail($event, i)">
+            <p style="color: red" *ngIf = "!emailValid"> Email is invalid </p>
+        </div>
+        <div class="form-group">
+            <label for="contact">Contact no.</label>
+            <input type="number" class="form-control" name="contact{{i}}" [(ngModel)] ="newForm.contact">
+        </div>
+        <span class="btn btn-danger" (click)="removeForm(i)" >remove -</span>
+    </div>
+    <span class ="btn btn-success" (click)="addForm()">Add +</span>
+    <button class="btn btn-primary">Submit</button>
+    <span class ="btn btn-tertiary" (click)="goToLogin()">Back To Login</span>
+</form>

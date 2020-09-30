@@ -1,0 +1,14 @@
+.form-area{
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1.3px solid #CED4DA;
+    border-radius: 6px;
+}
+
+.btn{
+    margin-right: 0.8rem;
+}
+
+.btn-tertiary{
+    border : 1px solid #CED4DA;
+}
